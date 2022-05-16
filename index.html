@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Document</title>
+   
+</head>
+<body>
+    <header>
+        <h1>DETERMINAR QUE TIPO DE RAICES TIENE UNA ECUACION CUADRATICA </h1>
+    </header>
+    <section>
+        <div class="calculos" id="salida"></div>
+        <div class="calculos" id="a">
+        </div>
+        <div class="calculos" id="b">
+        </div>
+        <div class="calculos" id="c">
+        </div>
+        <div class="calculos" id="r1">
+        </div>
+        <div class="calculos" id="r2">
+    </section>
+    <script>
+        var a=parseFloat(prompt("Introduce valor de a"))
+        var b=parseFloat(prompt("Introduce valor de b"))
+        var c=parseFloat(prompt("Introduce valor de c"))    
+        var d=Math.pow(b,2)-(4*a*c);
+        var x1 = ( - b + Math.sqrt(d) ) / (2*a)
+        var x2 = ( - b - Math.sqrt(d) ) / (2*a)
+        document.getElementById("a").innerHTML="a = "+a;
+        document.getElementById("b").innerHTML="b = "+b;
+        document.getElementById("c").innerHTML="c = "+c;
+        
+        if (d>0) {
+            document.getElementById("salida").innerHTML = "La ecuacion tiene 2 raices: "+x1+" y "+x2;
+        }
+        else if (d==0){
+            document.getElementById("salida").innerHTML = "La ecuacion tiene 1 raiz: " +x1;
+        }
+        else{
+            document.getElementById("salida").innerHTML = "La ecuacion tiene raices imaginarias"
+        }
+        document.getElementById("r1").innerHTML="X1 = "+x1;
+        document.getElementById("r2").innerHTML="X2 = "+x2;
+        
+    </script>
+</body>
+</html>
